@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Friend {
+  id: ID!
+  name: String!
+  age: Float!
+  address: String!
+  userId: Float!
+  user: User!
+}
+
+type User {
+  id: ID!
+  username: String!
+  name: String!
+  role: String!
+  password: String!
+}
+
+type Query {
+  getFriends: [Friend!]!
+  getFriend(id: Int!): Friend!
+  getUser(id: Int!): User!
+}
+
+type Mutation {
+  addFriend(data: FriendDto!): Friend!
+  updateFriend(id: Int!, data: FriendDto!): Friend!
+  deleteFriend(id: Int!): Friend!
+}
+
+input FriendDto {
+  name: String
+  age: Float
+  address: String
+}
